@@ -30,7 +30,8 @@ namespace MVCDemo.Controllers
             {
                 movies = movies.Where(s => s.Title.Contains(searchString));
             }
-
+            //get到all
+            var list = _context.Movie.ToList();
             return View(await _context.Movie.ToListAsync());
         }
 
@@ -134,6 +135,7 @@ namespace MVCDemo.Controllers
             if (id == null)
             {
                 return NotFound();
+                
             }
 
             var movie = await _context.Movie
@@ -141,6 +143,7 @@ namespace MVCDemo.Controllers
             if (movie == null)
             {
                 return NotFound();
+                
             }
 
             return View(movie);
@@ -151,6 +154,9 @@ namespace MVCDemo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var mm=_context.Find<Movie>(id);
+            var mm2 = _context.Movie.Find(id);
+
             var movie = await _context.Movie.FindAsync(id);
             _context.Movie.Remove(movie);
             
@@ -161,8 +167,18 @@ namespace MVCDemo.Controllers
 
         private bool MovieExists(int id)
         {
+            
             return _context.Movie.Any(e => e.Id == id);
         }
+        [HttpGet]
+        public List<Movie> GetMovieByTitle(string title) {
+            var db = _context.Movie.Where(t => t.Title == title)
+                .OrderBy(d => d.Id)
+                .ToList();
+                
+            return db;
+        }
+
     }
 
 }
