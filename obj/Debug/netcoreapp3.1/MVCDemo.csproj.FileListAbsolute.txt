@@ -328,8 +328,6 @@ C:\Users\24466\Desktop\github_demo\MVCDemo\bin\Debug\netcoreapp3.1\runtimes\win\
 C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.csprojAssemblyReference.cache
 C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.AssemblyInfoInputs.cache
 C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.AssemblyInfo.cs
-C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.csproj.CoreCompileInputs.cache
-C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.RazorAssemblyInfo.cache
 C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.RazorAssemblyInfo.cs
 C:\Users\24466\Desktop\github_demo\MVCDemo\obj\Debug\netcoreapp3.1\MVCDemo.TagHelpers.input.cache

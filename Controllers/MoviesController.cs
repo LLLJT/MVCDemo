@@ -30,7 +30,10 @@ namespace MVCDemo.Controllers
         {
             Message = $"About page visited at {DateTime.UtcNow.ToLongTimeString()}";
             //写入到日志中
+
             _logger.LogInformation(Message);
+
+
         }
 
 
@@ -185,6 +188,22 @@ namespace MVCDemo.Controllers
             
             return _context.Movie.Any(e => e.Id == id);
         }
+        /*
+         * {id:int}
+         * {active:bool}
+         * {dob:datetime}
+         * {price:decimal}
+         * {id:guid}
+         * {ticks:long}
+         * {filename:maxlength(8):minlength(4)}
+         * {filename:length(5.7)}
+         * {age:range(1,4)}{age:min(5)}{age:max(120)}
+         * {name:alpha}
+         * {ssn:regex(^\\d{{3}}-\\d{{2}}-\\d{{4}}$)}
+         * {name:required}强制
+         */
+
+        //[Route]("users/{id:int:min(1)}")
         [HttpGet]
         public List<Movie> GetMovieByTitle(string title) {
             var db = _context.Movie.Where(t => t.Title == title)

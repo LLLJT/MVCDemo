@@ -940,6 +940,18 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "Rick.Docs.Samples.RouteInfo/1.0.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Docs.Samples.RouteInfo.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Docs.Samples.RouteInfo.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -4265,6 +4277,18 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "Rick.Docs.Samples.RouteInfo/1.0.0.4": {
+      "sha512": "UZWAKDz1UMOYR5EzjgUH+y8N87Q8q6WZr7JZ9fKrtZTzzJPE0e7UVRq0zYaxca6zKBzMzyNc0wPYYPhkgkf4qg==",
+      "type": "package",
+      "path": "rick.docs.samples.routeinfo/1.0.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Docs.Samples.RouteInfo.dll",
+        "rick.docs.samples.routeinfo.1.0.0.4.nupkg.sha512",
+        "rick.docs.samples.routeinfo.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -8828,7 +8852,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.26",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.25",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.25",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "Rick.Docs.Samples.RouteInfo >= 1.0.0.4"
     ]
   },
   "packageFolders": {
@@ -8885,6 +8910,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "Rick.Docs.Samples.RouteInfo": {
+            "target": "Package",
+            "version": "[1.0.0.4, )"
           }
         },
         "imports": [
