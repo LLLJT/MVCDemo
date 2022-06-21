@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MVCDemo.Controllers;
 using MVCDemo.Models;
 
 namespace MVCDemo
@@ -37,9 +38,17 @@ namespace MVCDemo
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .ConfigureLogging(logging=> {
+                logging.ClearProviders();
+                logging.AddConsole();
+            })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }).ConfigureServices(services=> {
+                    services.AddTransient<IStartupFilter, RequestSetOptionsStartupFilter>();
+                })
+            
+            ;
     }
 }
