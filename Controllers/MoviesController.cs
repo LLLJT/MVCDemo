@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Logging;
 using MVCDemo.Data;
 using MVCDemo.Models;
 
@@ -15,10 +16,24 @@ namespace MVCDemo.Controllers
     {
         private readonly MVCDemoContext _context;
 
-        public MoviesController(MVCDemoContext context)
+        //默认日志记录
+        private readonly ILogger _logger;
+
+        public string Message;
+
+        public MoviesController(MVCDemoContext context,ILogger<MoviesController> logger)
         {
             _context = context;
+            _logger = logger;
         }
+        public void OnGet()
+        {
+            Message = $"About page visited at {DateTime.UtcNow.ToLongTimeString()}";
+            //写入到日志中
+            _logger.LogInformation(Message);
+        }
+
+
 
         // GET: Movies
         public async Task<IActionResult> Index(string searchString)
